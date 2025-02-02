@@ -1,6 +1,9 @@
 let currentTheme = getTheme();
 
-changeTheme();
+document.addEventListener('DOMContentLoaded',function(){
+    changeTheme();
+})
+
 function changeTheme(){
     document.querySelector('html').classList.add(currentTheme);
     const changeThemeBtn = document.querySelector('#theme_change_btn');

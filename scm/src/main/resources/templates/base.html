@@ -2,7 +2,7 @@
 <html 
 lang="en"
 th:fragment = "parent(content,title,script)"
-xmlns="http://www.thymleaf.org" 
+xmlns="http://www.thymeleaf.org" 
 >
 
 <head>
@@ -15,8 +15,8 @@ xmlns="http://www.thymleaf.org"
 </head>
 
 <body class="dark:bg-gray-900 dark:text-white">
-        <div data-th-replace="navbar :: navbar"></div>
-       <div class="p-4">
+        <div data-th-replace="~{navbar :: navbar}"></div>
+       <div class="grid">
         <section data-th-replace="${content}"></section>
        </div>
        <footer class="p-4">Footer: SCM project</footer>
