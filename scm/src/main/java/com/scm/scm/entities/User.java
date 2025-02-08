@@ -52,7 +52,7 @@ public class User implements UserDetails {
     private String profiePic;
     private String phoneNo;
 
-    private boolean enabled = false;
+    private boolean enabled = true;
     private boolean emailVerified = false;
     private boolean phoneVerified = false;
     @Enumerated(value = EnumType.STRING)
