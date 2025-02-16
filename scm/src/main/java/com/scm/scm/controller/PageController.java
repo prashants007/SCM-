@@ -12,6 +12,7 @@ import com.scm.scm.entities.User;
 import com.scm.scm.forms.UserForm;
 import com.scm.scm.helper.Message;
 import com.scm.scm.helper.MessageType;
+import com.scm.scm.services.UserService;
 import com.scm.scm.services.UserServiceImpl;
 
 import jakarta.servlet.http.HttpSession;
@@ -22,7 +23,9 @@ import jakarta.validation.Valid;
 public class PageController {
 
     @Autowired
-    UserServiceImpl userService;
+    UserService userService;
+
+
 
     @RequestMapping("/home")
     public String Home(Model model){
