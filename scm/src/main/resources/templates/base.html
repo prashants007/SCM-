@@ -13,6 +13,8 @@ xmlns="http://www.thymeleaf.org"
         <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
         <link rel="stylesheet" th:href="@{'/css/output.css'}" />
         <link rel="stylesheet" th:href="@{'/css/style.css'}" />
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
 </head>
 
 <body class="dark:bg-gray-900 bg-gray-100 dark:text-white">
@@ -26,8 +28,8 @@ xmlns="http://www.thymeleaf.org"
        <div class="grid">
         <section data-th-replace="${content}"></section>
        </div>
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-        <script data-th-src="@{'/js/script.js'}"></script>        
+        <script data-th-src="@{'/js/script.js'}"></script> 
+       
 </body>
 
 </html>

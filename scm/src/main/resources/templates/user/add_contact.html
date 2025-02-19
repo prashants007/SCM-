@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Contact</title>
-
 </head>
 
 <body>
@@ -26,7 +25,7 @@
                         <div
                             class="w-full bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
                             <div th:replace ="~{message::messageBox}"></div>
-                            <form th:object="${contactForm}" class="space-y-4" th:action = "@{/user/contacts/add}" method="post" novalidate>
+                            <form th:object="${contactForm}" class="space-y-4" th:action = "@{/user/contacts/add}" method="post" enctype="multipart/form-data">
                                 <p class="text-xl font-medium text-gray-900 dark:text-white mb-2">
                                     Add Contact
                                 </p>
@@ -130,8 +129,11 @@
                                 <!-- contact image field -->
                                  <div class="mb-6">
                                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="small_size">Contact Image</label>
-                                <input class="block w-full mb-5 text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="small_size" type="file">
+                                <input id="image_file_input" th:field="*{image}" class="block w-full mb-5 text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" type="file">
                                 </div>
+                                <img src="" id="image_file_preview" class="max-h-52 mx-auto rounded-lg shadow m-3" alt="">
+                                <p th:if ="${#fields.hasErrors('image')}" th:errors="*{image}" class="text-red-600 text-sm"></p>
+
                                 <!-- favorite contact -->
                                 <div class="flex items-center mb-6">
                                     <input th:field="*{isFavorite}" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
@@ -152,7 +154,7 @@
             </div>
         </div>
 
-
+    <script th:src="@{'/js/admin.js'}"></script>
     </div>
 </body>
 
